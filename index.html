@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flores Digital</title>
+    <meta name="description" content="Flores Digital — Coming Soon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            background: #000;
+            color: #fff;
+            font-family: 'Share Tech Mono', 'Courier New', monospace;
+            overflow: hidden;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .status {
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            letter-spacing: 0.12em;
+            position: relative;
+            opacity: 0;
+            animation: fadeIn 1.5s ease forwards 0.5s;
+        }
+
+        .status::after {
+            content: '█';
+            display: inline-block;
+            margin-left: 2px;
+            animation: blink 1s step-end infinite;
+        }
+
+        .logo {
+            position: fixed;
+            bottom: 48px;
+            opacity: 0;
+            animation: fadeIn 1.5s ease forwards 1.2s;
+        }
+
+        .logo img {
+            height: 64px;
+            width: auto;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+    </style>
+    <link rel="icon" href="data:,">
+</head>
+<body>
+    <p class="status">Training in progress...</p>
+    <div class="logo">
+        <img src="logo.png" alt="Flores Digital">
+    </div>
+</body>
+</html>
